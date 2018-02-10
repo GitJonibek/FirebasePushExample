@@ -8,6 +8,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
+import android.widget.Toast;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
@@ -32,6 +33,7 @@ public class MyNotificationManager {
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentTitle(title)
                 .setContentText(body);
+        Toast.makeText(this.mCtx, "Push Working", Toast.LENGTH_LONG).show();
         Intent resultIntent = new Intent(mCtx, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(mCtx, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
